@@ -1,0 +1,84 @@
+let {sequelize,Model,DataTypes}= require("../init/dbconfiq")
+
+class Product extends Model{}
+Product.init({
+    id:{
+        type:DataTypes.INTEGER,
+        allowNull:false,
+        autoIncrement:true,
+        primaryKey:true
+    },
+    name:{
+        type:DataTypes.STRING(50),
+        allowNull:false
+    },
+    stock:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
+    stock_alert:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
+    Description:{
+        type:DataTypes.STRING(600),
+        allowNull:false
+    },
+    datails:{
+        type:DataTypes.STRING(600),
+        allowNull:false
+    },
+    price:{
+        type:DataTypes.FLOAT,
+        allowNull:false   
+    },
+    discount:{
+        type:DataTypes.FLOAT,
+        allowNull:true
+    },
+    discount_type:{
+        type:DataTypes.BOOLEAN,
+        allowNull:true
+    },
+    payable_amount:{
+        type:DataTypes.FLOAT,
+        allowNull:false 
+    },
+    gst_percentage:{
+        type:DataTypes.INTEGER,
+        allowNull:true
+    },
+    slug:{
+        type:DataTypes.STRING(100),
+        allowNull:true
+    },
+    is_active:{
+        type:DataTypes.BOOLEAN,
+        allowNull:true
+    },
+    is_deleted:{
+        type:DataTypes.BOOLEAN,
+        allowNull:true
+    },
+    created_by:{
+        type:DataTypes.INTEGER,
+        allowNull:true
+    },
+    updated_by:{
+        type:DataTypes.INTEGER,
+        allowNull:true
+    },
+    createdAt:{
+        type:DataTypes.INTEGER,
+        allowNull:true
+    },
+    updatedAt:{
+        type:DataTypes.INTEGER,
+        allowNull:true
+    }
+
+},{
+    tableName:"product",modelName:"Product", sequelize
+});
+
+module.exports={Product}

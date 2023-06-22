@@ -24,7 +24,7 @@ User.init({
     otp:{
         type:DataTypes.STRING,
         allowNull:true
-    }
+    },
 }, {
     tableName: "user", modelName: "User", sequelize: sequelize 
 })

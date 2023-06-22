@@ -12,6 +12,7 @@ function auth(Permission) {
             return { error }
         })
         if (!dcrypt || (dcrypt && dcrypt.error)) {
+            console.log("auth middleware" , dcrypt.error)
             return res.status(401).send({ error: "unautorized request2" })
         }
         let user = await sequelize.query(`Select
